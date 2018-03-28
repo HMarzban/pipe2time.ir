@@ -30,7 +30,7 @@ const get_year =  function(){
 
     //FIXME: depend of this, is harmful
     return new Promise(resolve => {
-          let year =   $('input[type="text"]').val()
+          let year =   $('input[type="text"]').val();
           resolve(year);
       });   
 }//fn get_year
@@ -53,9 +53,9 @@ const get_month_days = (_index  )=>{
         p.then(function(){
             resolve(montht_day);
         });
-    })// promise return
+    });// promise return
 
-}// fn get_month_days
+};// fn get_month_days
 
 const get_month_event = (_index = 1)=>{
 
@@ -65,15 +65,15 @@ const get_month_event = (_index = 1)=>{
         $('.panel-body').eq(_index).find('.list-unstyled li').each((index,val)=>{
             p = p.then(function(){ 
                 let isHoliday = $(val).hasClass('eventHoliday');
-                let text = fixNumbers($(val).text().replace(/\  /g,""));
-                eventDays.push({"isHoliday":isHoliday,"text": JSON.stringify( text.trim() ) });
+                let text = fixNumbers($(val).text());
+                eventDays.push({"isHoliday":isHoliday,"text":  text.trim().replace(/(?:\r|\"|\n)/g," ").replace(/\  /g,"")  });
             });
         });
         p.then(function(){
             resolve(eventDays);
         });
     });// promise return
-}// fn get_month_event
+};// fn get_month_event
 
 const get_month_heade = (_index) =>{
 
@@ -90,7 +90,7 @@ const get_month_heade = (_index) =>{
 const compilehtml2Jsons = async () =>{
 
     //TODO: match this list with _json var, To of Page
-    let year_list = ["1397","1398","1399","1400"]
+    let year_list = ["1397","1398","1399","1400"];
     for(let o = 0 ; o < year_list.length ; o++ ){
         //TODO: check for if file does not exist.
         $ =  cheerio.load(fs.readFileSync('cal/'+year_list[o]+'.html'));
