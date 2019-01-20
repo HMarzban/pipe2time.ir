@@ -1,15 +1,18 @@
 {
   "name": "calendar_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Jalali, Qamari, Miladi Calendar JSON API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretti": "prettier --write index.js",
+    "build": "node ./index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Hossein Marzban",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2"
+    "cheerio": "^1.0.0-rc.2",
+    "prettier": "^1.16.0"
   }
 }

@@ -1,0 +1,10 @@
+{
+	"printWidth": 170,
+	"trailingComma": "all",
+	"tabWidth": 4,
+	"semi": true,
+    "singleQuote": false,
+    "bracketSpacing": true,
+    "proseWrap":"never",
+    "endOfLine":"lf"
+}
