@@ -1,18 +1,23 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 # Jalali, Qamari, Miladi Calendar from "time.ir" Offline JSON API
+
 Web Crawler for Time.ir to Obtain JSON File, Jalali, Qamari, Miladi JSON Calendar API.
+
 ## Demo
 
->This project is part of [Magic Mirror](https://github.com/HosseinMarzban/MagicMirror) Calendar Module.
+> This project is part of [Magic Mirror](https://github.com/HosseinMarzban/MagicMirror) Calendar Module.
 
 <img src="./Demo.png">
 <br>
 
 ## Description
+
 This piece of code work as an offline way, it means that I saved the page that years I want in `calc` folder, then I crawl into that file and parse and export as a JSON file. [Find and Manipulate your Target Date.](https://www.time.ir/fa/eventyear-%D8%AA%D9%82%D9%88%DB%8C%D9%85-%D8%B3%D8%A7%D9%84%DB%8C%D8%A7%D9%86%D9%87)
 
 ## JSON OUTPUT
-``` json
+
+```json
 {
     "version": "1.0.0",
     "creatAt": "2018/3/21",

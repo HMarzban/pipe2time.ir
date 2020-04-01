@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pretti": "prettier --write index.js",
-    "build": "node ./index.js"
+    "pretty": "prettier --write index.js",
+    "build": "node ./index.js",
+    "lint": "prettier-standard --lint ./index.js"
   },
   "keywords": [],
   "author": "Hossein Marzban",
@@ -15,6 +16,7 @@
     "cheerio": "^1.0.0-rc.2"
   },
   "devDependencies": {
-    "prettier": "^2.0.2"
+    "prettier": "^2.0.2",
+    "prettier-standard": "^16.2.1"
   }
 }
