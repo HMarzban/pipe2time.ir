@@ -1,6 +1,6 @@
 {
   "name": "calendar_api",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Jalali, Qamari, Miladi Calendar JSON API",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,9 @@
   "author": "Hossein Marzban",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "prettier": "^1.16.0"
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.2"
   }
 }
