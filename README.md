@@ -1,4 +1,5 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 # Jalali, Qamari, Miladi Calendar from "time.ir" Offline JSON API
 
@@ -83,3 +84,6 @@ This piece of code work as an offline way, it means that I saved the page that y
 
 1. install dependecy `npm i`
 2. build JSON API `npm run build`
+
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
