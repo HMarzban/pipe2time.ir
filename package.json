@@ -1,22 +1,34 @@
 {
-  "name": "calendar_api",
-  "version": "1.2.0",
-  "description": "Jalali, Qamari, Miladi Calendar JSON API",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "pretty": "prettier --write index.js",
-    "build": "node ./index.js",
-    "lint": "prettier-standard --lint ./index.js"
-  },
-  "keywords": [],
-  "author": "Hossein Marzban",
-  "license": "ISC",
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.2"
-  },
-  "devDependencies": {
-    "prettier": "^2.0.2",
-    "prettier-standard": "^16.2.1"
-  }
+	"name": "calendar_api",
+	"version": "2.1.0",
+	"description": "Jalali, Qamari, Miladi Calendar JSON API",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"pretty": "prettier --write src/*.js",
+		"start": "node ./src/index.js",
+		"lint": "prettier-standard --lint src/*.js"
+	},
+	"keywords": [
+		"jalali",
+		"qamari",
+		"miladi",
+		"calander",
+		"API",
+		"ics"
+	],
+	"author": "Hossein Marzban",
+	"license": "ISC",
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.2",
+		"ics": "^2.19.0",
+		"inquirer": "^7.1.0",
+		"jalali-moment": "^3.3.3",
+		"moment": "^2.24.0",
+		"puppeteer": "^2.1.1"
+	},
+	"devDependencies": {
+		"prettier": "^2.0.2",
+		"prettier-standard": "^16.2.1"
+	}
 }
