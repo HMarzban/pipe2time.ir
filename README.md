@@ -3,87 +3,90 @@
 
 # Jalali, Qamari, Miladi Calendar from "time.ir" Offline JSON API
 
-Web Crawler for Time.ir to Obtain JSON File, Jalali, Qamari, Miladi JSON Calendar API.
+Web Crawler for Time.ir to Obtain all data as a JSON File, Jalali, Qamari, Miladi JSON Calendar API.
 
-## Demo
+This script has two pipes:
 
-> This project is part of [Magic Mirror](https://github.com/HosseinMarzban/MagicMirror) Calendar Module.
+- [JSON API](#json-api)
+- [.ics calendar](#ics-events-for-google,-outlook-...)
 
-<img src="./Demo.png">
-<br>
+## .ics events for google, outlook ...
 
-## Description
+One of the pipes that you can achieve when you execute the project is a .ics file. by default, you can download one of the files below and import in to your calendar. this file contains all events of the year by the source of [time.ir](https://www.time.ir/)
 
-This piece of code work as an offline way, it means that I saved the page that years I want in `calc` folder, then I crawl into that file and parse and export as a JSON file. [Find and Manipulate your Target Date.](https://www.time.ir/fa/eventyear-%D8%AA%D9%82%D9%88%DB%8C%D9%85-%D8%B3%D8%A7%D9%84%DB%8C%D8%A7%D9%86%D9%87)
+#### Events
 
-## JSON OUTPUT
+[1390](./dist/event-1390.ics),
+[1391](./dist/event-1391.ics),
+[1392](./dist/event-1392.ics),
+[1393](./dist/event-1393.ics),
+[1394](./dist/event-1394.ics),
+[1395](./dist/event-1395.ics),
+[1396](./dist/event-1396.ics),
+[1397](./dist/event-1397.ics),
+[1398](./dist/event-1398.ics),
+[1399](./dist/event-1399.ics),
+[1400](./dist/event-1400.ics),
+[1401](./dist/event-1401.ics),
+[1402](./dist/event-1402.ics),
+[1403](./dist/event-1403.ics)
+
+## JSON API
+
+#### Api schema:
+
+`https://hmarzban.github.io/pipe2time.ir/api/:year/:target`
+
+#### Example:
+
+`https://hmarzban.github.io/pipe2time.ir/api/1399/index.json` [open Link](https://hmarzban.github.io/pipe2time.ir/api/1399/index.json)
+
+`https://hmarzban.github.io/pipe2time.ir/api/1399/events.json` [open Link](https://hmarzban.github.io/pipe2time.ir/api/1399/events.json)
+
+`https://hmarzban.github.io/pipe2time.ir/api/1399/weeks.json` [open Link](https://hmarzban.github.io/pipe2time.ir/api/1399/weeks.json)
+
+Also, you can download all in one these years data by [this link](./dist/calendar.json)
+
+> List of available years: `1390,1391,1392,1393,1394,1395,1396,1397,1398,1399,1400,1401,1402,1402,1403`
+
+> Note: if you need more years, you can clone the project and make your custom list if years.
+
+## JSON OUTPUT SCHEMA
 
 ```json
 {
-    "version": "1.0.0",
-    "creatAt": "2018/3/21",
-    "cal": {
-        "1397": {
-            "jalali": "فروردین 1397",
-            "miladi": "March - April 2018",
-            "qamari": "رجب - شعبان - 1439",
-            "event": [
-                [
-                    {
-                        "isHoliday": true,
-                        "text": "\"1 فروردین\\nجشن نوروز/جشن سال نو\""
-                    },
-                    {
-                        "isHoliday": false,
-                        "text": "\"1 فروردین\\nشهادت امام علی النقی الهادی علیه السلام\\n [ 3 رجب ]\""
-                    },
-                    .
-                    .
-                    .
-                ],
-                .
-                .
-                .
-            ],
-            "days": [
-                 [
-                    {
-                        "holiday": false,
-                        "disabled": true,
-                        "days": {
-                            "j": "26",
-                            "m": "17",
-                            "q": "28"
-                        }
-                    },
-                    {
-                        "holiday": false,
-                        "disabled": true,
-                        "days": {
-                            "j": "27",
-                            "m": "18",
-                            "q": "29"
-                        }
-                    },
-                    .
-                    .
-                    .
-                 ],
-                 .
-                 .
-                 .
-            ]
-        },
-        "1398": { ... },
-        "1399": { ... }, ...
-    }
+ "1398": [ ... ],
+ "1394": [
+  {
+  "header": {
+    "miladi": "March - April 2015",
+    "qamari": "جمادي الاولي - جمادي الثانيه - 1436",
+    "jalali": "فروردین 1394"},
+  "events": [
+    {
+    "isHoliday": true,
+    "text": "1 فروردین جشن نوروز/جشن سال نو",
+    "jDate": "1394/01/01",
+    "mDate": "2015/03/21",
+    "jDay": "1"
+    },
+    ...
+  ],
+  "weeks": [
+    {"holiday": true, "disabled": false, "day": { "j": "1", "m": "21", "q": "30" } },
+    ...
+  ]
+  },
+  ...
+ ],
+ "1401": [ ... ],
+ "1402": [ ... ]
 }
 ```
 
 ## Develop and Contribute
 
 1. install dependecy `npm i`
-2. build JSON API `npm run build`
-
+2. build JSON API `npm start`
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
