@@ -1,9 +1,9 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-# Jalali, Qamari, Miladi Calendar from "time.ir" Offline JSON API
+# Jalali, Qamari, Miladi Calendar from "time.ir", JSON API
 
-Web Crawler for Time.ir to Obtain all data as a JSON File, Jalali, Qamari, Miladi JSON Calendar API.
+Web Crawler for Time.ir to obtain all data as a JSON file, Jalali, Qamari, Miladi data are included.
 
 This script has two pipes:
 
@@ -12,7 +12,7 @@ This script has two pipes:
 
 ## .ics events for google, outlook ...
 
-One of the pipes that you can achieve when you execute the project is a .ics file. by default, you can download one of the files below and import in to your calendar. this file contains all events of the year by the source of [time.ir](https://www.time.ir/)
+One of the pipes that you can achieve when you execute the project is creating a .ics file. by default, you can download one of the files below and import in to your calendar. these files contains all events of the year by the source of [time.ir](https://www.time.ir/)
 
 #### Events
 
@@ -48,8 +48,7 @@ One of the pipes that you can achieve when you execute the project is a .ics fil
 Also, you can download all in one these years data by [this link](./dist/calendar.json)
 
 > List of available years: `1390,1391,1392,1393,1394,1395,1396,1397,1398,1399,1400,1401,1402,1402,1403`
-
-> Note: if you need more years, you can clone the project and make your custom list if years.
+> Note: if you need more years, clone the project and make your custom list of years.
 
 ## JSON OUTPUT SCHEMA
 
@@ -87,6 +86,6 @@ Also, you can download all in one these years data by [this link](./dist/calenda
 ## Develop and Contribute
 
 1. install dependecy `npm i`
-2. build JSON API `npm start`
+2. run the cli `npm start`
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
