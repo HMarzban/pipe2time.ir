@@ -1,5 +1,6 @@
 const puppeteer = require("puppeteer")
 const fs = require("fs")
+const { createJsonApiFile } = require("./year-api")
 
 const evaluatePage = async (browser, year) => {
 	const page = await browser.newPage()
@@ -110,16 +111,6 @@ const init = async (years, activeApi) => {
 	} catch (error) {
 		console.log(error)
 	}
-}
-
-const createJsonApiFile = (year, data) => {
-	const path = `./api/${year}`
-	if (!fs.existsSync(path)) fs.mkdirSync(path)
-	const events = data[year].map(month => month.events)
-	const weeks = data[year].map(month => month.weeks)
-	fs.writeFileSync(`${path}/events.json`, JSON.stringify(events[0]))
-	fs.writeFileSync(`${path}/weeks.json`, JSON.stringify(weeks[0]))
-	fs.writeFileSync(`${path}/index.json`, JSON.stringify(data))
 }
 
 module.exports = init
