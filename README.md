@@ -89,9 +89,40 @@ Also, you can download all in one these years data by [this link](./dist/calenda
 }
 ```
 
-## Develop and Contribute
+## Data scope and regeneration
 
-1. install dependecy `npm i`
-2. run the cli `npm start`
+The checked-in data is a historical snapshot collected from time.ir. The original
+scrape date was not recorded; future-year files are not a promise of current holiday
+accuracy. Review the upstream calendar before relying on an event.
 
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+On 2026-09-17, `events.json` and `weeks.json` for 1390–1410 were regenerated **only
+from each committed `index.json`** to correct a first-month-only export. No calendar
+entries, source indexes, `dist/calendar.json`, or ICS files were re-scraped or changed.
+For example, 1405 now exports all 220 events instead of the first 20.
+
+- `index.json`: year-keyed array of 12 month objects.
+- `events.json`: flat array of every month's events in calendar order.
+- `weeks.json`: flat array of every month's day-grid cells, including disabled
+  leading/trailing cells. These cells contain day numbers, not complete dates;
+  use `index.json` when you need month boundaries.
+
+Regenerate derived JSON endpoints and run the fixture tests without dependencies,
+a browser, or network access (Node.js 22+):
+
+```sh
+npm run regenerate:api
+npm test
+```
+
+## Develop and contribute
+
+The scraper remains a historical Puppeteer 2 integration. Its selectors and live
+compatibility have not been revalidated. Scraping requires installing dependencies
+and a compatible browser; `npm start` opens the interactive CLI. The ICS generator
+uses the stored Gregorian `mDate` components without timezone-dependent parsing,
+and gives all-day events an exclusive end on the following day. Fixtures cover
+leap days, year rollover and the 1405 snapshot. Existing ICS downloads are preserved;
+this does not revalidate the original Jalali-to-Gregorian conversion or upstream
+holiday accuracy.
+
+The package metadata follows the existing [MIT license](LICENSE).
